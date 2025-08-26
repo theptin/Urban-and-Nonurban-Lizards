@@ -1562,7 +1562,7 @@ head(location_dat)
 coords <- data.frame(lat=location_dat[,3], long=location_dat[,4])
 
 #Global Human  Modification index
-GHM <- raster("gHM.tif")
+GHM <- raster("gHM.tif") #Can be downloaded from: https://figshare.com/articles/dataset/Global_Human_Modification/7283087
 
 coords_df <- data.frame(long = location_dat[,4], lat = location_dat[,3])
 
@@ -3951,9 +3951,9 @@ Final_Combined_EnviroPlot <- p1 +
 ###############################
 #Rasters for Maps
 #Annual Precip
-#total_precip <- sum(precip_1, precip_2, precip_3, precip_4, precip_5, precip_6, precip_7, precip_8, precip_9, precip_10, precip_11, precip_12)
-#writeRaster(total_precip, "total_precipitation.tif", overwrite = TRUE)
-total_precip <- raster("total_precipitation.tif")
+total_precip <- sum(precip_1, precip_2, precip_3, precip_4, precip_5, precip_6, precip_7, precip_8, precip_9, precip_10, precip_11, precip_12)
+writeRaster(total_precip, "total_precipitation.tif", overwrite = TRUE)
+total_precip <- raster("total_precipitation.tif") #Created above. Only need to create once, and then load it.
 
 climcol <- colorRampPalette(c("purple", "blue", "skyblue", "green", "lightgreen", "yellow", "orange", "red", "darkred"))
 climcol_rev <- colorRampPalette(rev(c("purple", "blue", "skyblue", "green", "lightgreen", "yellow", "orange", "red", "darkred")))
